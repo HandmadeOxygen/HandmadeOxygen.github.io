@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Review Website</title>
+    <style>
+        /* Add your CSS styles here */
+        /* Style the sections or genres as needed */
+        .genre-section {
+            display: none;
+        }
+
+        .selected-genre {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Book Review Website</h1>
+        <label for="genre">Select Genre:</label>
+        <select id="genre" onchange="showGenre()">
+            <option value="all">All Genres</option>
+            <option value="economics">Economics</option>
+            <option value="computer-science">Computer Science</option>
+            <option value="history">History</option>
+            <option value="medicine">Medicine</option>
+            <option value="law">Law</option>
+            <option value="geography">Geography</option>
+        </select>
+    </header>
+
+    <section id="all" class="genre-section selected-genre">
+        <h2>All Genres</h2>
+        <!-- Add your book reviews for all genres here -->
+        <p>Book review 1</p>
+        <p>Book review 2</p>
+    </section>
+
+    <section id="economics" class="genre-section">
+        <h2>Economics</h2>
+        <!-- Add your book reviews for the Economics genre here -->
+        <p>Book review 3</p>
+        <p>Book review 4</p>
+    </section>
+
+    <section id="computer-science" class="genre-section">
+        <h2>Computer Science</h2>
+        <!-- Add your book reviews for the Computer Science genre here -->
+        <p>Book review 5</p>
+        <p>Book review 6</p>
+    </section>
+
+    <section id="history" class="genre-section">
+        <h2>History</h2>
+        <!-- Add your book reviews for the History genre here -->
+        <p>Book review 7</p>
+        <p>Book review 8</p>
+    </section>
+
+    <section id="medicine" class="genre-section">
+        <h2>Medicine</h2>
+        <!-- Add your book reviews for the Medicine genre here -->
+        <p>Book review 9</p>
+        <p>Book review 10</p>
+    </section>
+
+    <section id="law" class="genre-section">
+        <h2>Law</h2>
+        <!-- Add your book reviews for the Law genre here -->
+        <p>Book review 11</p>
+        <p>Book review 12</p>
+    </section>
+
+    <section id="geography" class="genre-section">
+        <h2>Geography</h2>
+        <!-- Add your book reviews for the Geography genre here -->
+        <p>Book review 13</p>
+        <p>Book review 14</p>
+    </section>
+
+    <script>
+        function showGenre() {
+            const genreSelector = document.getElementById("genre");
+            const selectedGenre = genreSelector.value;
+            const genreSections = document.querySelectorAll(".genre-section");
+            
+            genreSections.forEach(section => {
+                if (section.id === selectedGenre || selectedGenre === "all") {
+                    section.classList.add("selected-genre");
+                } else {
+                    section.classList.remove("selected-genre");
+                }
+            });
+        }
+    </script>
+</body>
+</html>
